@@ -103,7 +103,7 @@ void free_dlistint(stack_t *head)
  */
 void _swap(stack_t **stack, unsigned int line_number)
 {
-	int tmp
+	int tmp;
 	stack_t *runner;
 
 	runner = *stack;

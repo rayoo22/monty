@@ -32,7 +32,7 @@ void read_file(char *filename, stack_t **stack)
 		s = get_op_func(line);
 		if (s == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n", line_count);
+			fprintf(stderr, "L%d: unknown instruction %d\n", line_count);
 			exit(EXIT_FAILURE);
 		}
 		s(stack, line_count);
@@ -134,7 +134,7 @@ char *parse_line(char *line, stack_t **stack, unsigned int line_number)
 		}
 		else
 		{
-			fprintf(stderr, "L%d: usage: push integer\n", lin_number);
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
 			exit(EXIT_FAILURE);
 		}
 	}

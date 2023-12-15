@@ -38,7 +38,7 @@ void _sub(stack_t **stack, unsigned int line_number)
  * @stack: pointer to lists for monty stack
  * @line_number: number of line opcode occurs
  */
-void _mul(stack **stack, unsigned int line_number)
+void _mul(stack_t **stack, unsigned int line_number)
 {
 	int aux;
 
@@ -46,7 +46,7 @@ void _mul(stack **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: cant mul stack too short\n", line_number);
 		free(var_global.buffer);
-		fclose(var_gobal.file);
+		fclose(var_global.file);
 		free_dlistint(*stack);
 		exit(EXIT_FAILURE);
 	}
@@ -54,7 +54,7 @@ void _mul(stack **stack, unsigned int line_number)
 	{
 		aux = (*stack)->n;
 		_pop(stack, line_number);
-		(*stack)-> *= aux;
+		(*stack)->n *= aux;
 	}
 }
 /**
